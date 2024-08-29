@@ -1,0 +1,24 @@
+---
+title: "Untitled"
+format: html
+---
+Nå. Men i mangel af en fungerende api fra kbs side (de to maintainers på dokumentationen arbejder her ikke længere), lykkedes det, under brug af 
+inspect funktionen og overvågning af api-kald fra hjemmesiden
+http://www5.kb.dk/images/billed/2010/okt/billeder/object1775525/da/
+
+at identificere at det er 
+
+http://www5.kb.dk/images/billed/2010/okt/billeder/subject37894/da/?page= 
+
+vi skal have fat på - med justeret subject og page nummer for at få det hele.
+
+```{r}
+hvad <- test %>% count(rights_tsim) %>% 
+  unnest()
+
+test %>% group_by(rights_tsim)
+test %>% count(rights_tsim) %>% 
+  slice(3) %>% 
+  unnest()
+```
+
